@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    ifstream inFile("test.txt"); // Open the file for reading
+
+    if (!inFile)
+    {
+        cerr << "Failed to open the file!" << endl;
+        return 1;
+    }
+
+    string line;
+
+    // Read and display each line from the file
+    while (getline(inFile, line))
+    {
+        cout << line << endl;
+    }
+
+    // Close the file
+    inFile.close();
+
+    return 0;
+}

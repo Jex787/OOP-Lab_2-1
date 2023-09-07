@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+class Rectangle
+{
+private:
+    double length;
+    double width;
+
+public:
+    // Constructor to initialize the length and width
+    Rectangle(double l, double w) : length(l), width(w) {}
+
+    // Function to calculate the area of the rectangle
+    double calculateArea()
+    {
+        return length * width;
+    }
+};
+
+class Square
+{
+private:
+    double side;
+
+public:
+    // Constructor to initialize the side length
+    Square(double s) : side(s) {}
+
+    // Function to calculate the area of the square
+    double calculateArea()
+    {
+        return side * side;
+    }
+};
+
+int main()
+{
+    double length = 20.0;
+    double width = 6.0;
+    double side = 20.0; // For the square
+
+    Rectangle rectangle(length, width);
+    Square square(side);
+
+    double rectangleArea = rectangle.calculateArea();
+    double squareArea = square.calculateArea();
+
+    cout << "Area of the Rectangle: " << rectangleArea << " square meters" << endl;
+    cout << "Area of the Square: " << squareArea << " square meters" << endl;
+
+    return 0;
+}

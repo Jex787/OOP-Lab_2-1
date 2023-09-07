@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student
+{
+protected:
+    string name;
+    int roll;
+    float marks;
+
+public:
+    Student(const string &n, int r, float m) : name(n), roll(r), marks(m) {}
+
+    void displayInfo()
+    {
+        cout << "Name: " << name << endl;
+        cout << "Roll Number: " << roll << endl;
+        cout << "Marks: " << marks << endl;
+    }
+};
+
+class LetterGradeStudent : public Student
+{
+public:
+    LetterGradeStudent(const string &n, int r, float m) : Student(n, r, m) {}
+
+    char calculateGrade()
+    {
+        if (marks >= 80.0)
+        {
+            return 'A';
+        }
+        else if (marks >= 75.0)
+        {
+            return 'A';
+        }
+        else
+        {
+            return 'F';
+        }
+    }
+};
+
+int main()
+{
+    string name;
+    int roll;
+    float marks;
+
+    cout << "Enter student's name: ";
+    cin >> name;
+
+    cout << "Enter student's roll number: ";
+    cin >> roll;
+
+    cout << "Enter student's marks: ";
+    cin >> marks;
+
+    LetterGradeStudent student(name, roll, marks);
+
+    cout << "\nStudent Information:\n";
+    student.displayInfo();
+
+    char grade = student.calculateGrade();
+    cout << "Letter Grade: " << grade << endl;
+
+    return 0;
+}

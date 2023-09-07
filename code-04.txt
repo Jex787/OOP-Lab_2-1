@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string name;
+    int roll;
+
+    // Prompt the user for input
+    cout << "Enter student's name: ";
+    getline(cin, name); // Allowing spaces in the name
+
+    cout << "Enter student's roll number: ";
+    cin >> roll;
+
+    // Create and open the "test.txt" file
+    ofstream outFile("test.txt");
+
+    // Check if the file was opened successfully
+    if (!outFile)
+    {
+        cerr << "Failed to create/open the file!" << endl;
+        return 1;
+    }
+
+    // Write the student's name and roll number to the file
+    outFile << "Name: " << name << "\n";
+    outFile << "Roll Number: " << roll << "\n";
+
+    // Close the file
+    outFile.close();
+
+    cout << "Data has been written to the 'test.txt' file." << endl;
+
+    return 0;
+}

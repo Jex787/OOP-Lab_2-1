@@ -1,0 +1,26 @@
+public class RoomCalculator {
+    // Method to calculate the area of the room
+    public static double calculateArea(double length, double width) {
+        return length * width;
+    }
+
+    // Method to calculate the volume of the room
+    public static double calculateVolume(double length, double width, double height) {
+        return length * width * height;
+    }
+
+    public static void main(String[] args) {
+        double length = 50.0;
+        double width = 7.0;
+        double height = 15.0;
+
+        // Calculate the area of the room
+        double area = calculateArea(length, width);
+
+        // Calculate the volume of the room
+        double volume = calculateVolume(length, width, height);
+
+        System.out.println("Area of the room: " + area + " square meters");
+        System.out.println("Volume of the room: " + volume + " cubic meters");
+    }
+}

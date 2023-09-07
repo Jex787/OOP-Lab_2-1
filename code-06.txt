@@ -1,0 +1,33 @@
+import java.io.*;
+
+public class StudentInfo {
+    public static void main(String[] args) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"))) {
+            // Input and write to the file
+
+            System.out.print("Enter student's name: ");
+            String name = reader.readLine();
+
+            System.out.print("Enter student's roll number: ");
+            int roll = Integer.parseInt(reader.readLine());
+
+            writer.write("Name: " + name + "\nRoll Number: " + roll);
+            System.out.println("Data has been written to 'test.txt' file.");
+        } catch (IOException e) {
+            System.err.println("An error occurred: " + e.getMessage());
+        }
+
+        // Reading from the file
+        try (BufferedReader fileReader = new BufferedReader(new FileReader("test.txt"))) {
+            String line;
+            System.out.println("\nInformation from 'test.txt' file:");
+            while ((line = fileReader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to read from the file: " + e.getMessage());
+        }
+    }
+
+}

@@ -1,0 +1,36 @@
+class NumberDisplay {
+    // Method to display the value of an integer
+    public void displayValue(int number) {
+        System.out.println("Value of the number: " + number);
+    }
+}
+
+class TwoNumberDisplay extends NumberDisplay {
+    // Method overriding to display the values of two integers
+    @Override
+    public void displayValue(int number) {
+        System.out.println("Value of the first number: " + number);
+    }
+
+    // Additional method to display the second number
+    public void displayValue(int number1, int number2) {
+        System.out.println("Value of the first number: " + number1);
+        System.out.println("Value of the second number: " + number2);
+    }
+}
+
+public class MethodOverriding {
+    public static void main(String[] args) {
+        NumberDisplay singleNumberDisplay = new NumberDisplay();
+        TwoNumberDisplay doubleNumberDisplay = new TwoNumberDisplay();
+
+        int number1 = 10;
+        int number2 = 20;
+
+        // Using the method from the base class
+        singleNumberDisplay.displayValue(number1);
+
+        // Using method overriding from the derived class to display two numbers
+        doubleNumberDisplay.displayValue(number1, number2);
+    }
+}
