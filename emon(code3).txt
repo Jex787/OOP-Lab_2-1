@@ -1,0 +1,30 @@
+// to display the left triangle using nested for loops
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int row, col, n;
+
+  cout << "Enter the number of rows for the left triangle: ";
+  cin >> n;
+
+  for (row = 1; row <= n; row++)
+  {
+    // Print spaces for indentation
+    for (col = 1; col <= n - row; col++)
+    {
+      cout << " ";
+    }
+
+    // Print asterisks for the triangle
+    for (col = 1; col <= row; col++)
+    {
+      cout << "*";
+    }
+
+    // Move to the next line after each row
+    cout << endl;
+  }
+  return 0;
+}
