@@ -25,19 +25,19 @@ class LetterGradeStudent : public Student
 public:
     LetterGradeStudent(const string &n, int r, float m) : Student(n, r, m) {}
 
-    char calculateGrade()
+    string calculateGrade()
     {
         if (marks >= 80.0)
         {
-            return 'A';
+            return "A+";
         }
         else if (marks >= 75.0)
         {
-            return 'A';
+            return "A";
         }
         else
         {
-            return 'F';
+            return "F";
         }
     }
 };
@@ -62,7 +62,7 @@ int main()
     cout << "\nStudent Information:\n";
     student.displayInfo();
 
-    char grade = student.calculateGrade();
+    string grade = student.calculateGrade();
     cout << "Letter Grade: " << grade << endl;
 
     return 0;
